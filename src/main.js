@@ -16,7 +16,17 @@ import store from './store';
 import 'normalize.css';
 import './assets/main.css';
 
-
+const routes = (
+    <Route component={App}>
+        <Redirect from="/" to="movies" />
+        <Route path="movies" component={Search} />
+        <Route path="about" component={About} />
+        <Route path="movies/:id" component={Movie}>
+            <Route path="recommendations" component={MovieRecommendations} />
+            <Route path="similar" component={MovieSimilar} />
+        </Route>
+    </Route>
+)
 
 ReactDOM.render(
     <Provider store={store}>
