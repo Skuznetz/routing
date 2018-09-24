@@ -5,7 +5,10 @@ import { searchMovies } from '../actions';
 import SearchBox from '../components/SearchBox.jsx';
 import MovieGrid from '../components/MovieGrid.jsx';
 
-
+connect(
+    mapStateToProps,
+    { searchMovies }
+)
 export default class Search extends Component {
     render() {
         return (
