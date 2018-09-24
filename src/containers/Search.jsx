@@ -17,5 +17,12 @@ export default class Search extends Component {
 }
 
 
+function mapStateToProps(state, ownProps) {
+    return {
+        movies: state.movies.items,
+        loading: state.movies.isFetching
+    };
+}
+
 
 
