@@ -7,6 +7,7 @@ import MovieGrid from '../components/MovieGrid.jsx';
         return (
             <div>
                 <SearchBox />
+                <MovieGrid />
             </div>
         );
     }
