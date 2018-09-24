@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import { searchMovies } from '../actions';
 import SearchBox from '../components/SearchBox.jsx';
 import MovieGrid from '../components/MovieGrid.jsx';
 
