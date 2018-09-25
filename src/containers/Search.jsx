@@ -11,9 +11,10 @@ connect(
 )
 export default class Search extends Component {
     handleSearch = search =>{
-        
+
     }
     render() {
+        console.log(this.props);
         return (
             <div>
                 <SearchBox search={""} onSearch={this.handleSearch} />
