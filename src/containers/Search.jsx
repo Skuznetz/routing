@@ -13,7 +13,7 @@ export default class Search extends Component {
     render() {
         return (
             <div>
-                <SearchBox />
+                <SearchBox search={""} onSearch={this.handleSearch} />
                 <MovieGrid />
             </div>
         );
