@@ -6,13 +6,20 @@ import { searchMovies } from '../actions';
 import SearchBox from '../components/SearchBox.jsx';
 import MovieGrid from '../components/MovieGrid.jsx';
 
+withRouter
+
 connect(
     mapStateToProps,
     { searchMovies }
 )
 export default class Search extends Component {
     handleSearch = search =>{
+           const { router, location } = this.props;
 
+        router.push({
+            pathname: location.pathname,
+            query: { ...location.query, search },
+        });
     }
     render() {
         console.log(this.props);
