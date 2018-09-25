@@ -10,6 +10,9 @@ connect(
     { searchMovies }
 )
 export default class Search extends Component {
+    handleSearch = search =>{
+        
+    }
     render() {
         return (
             <div>
