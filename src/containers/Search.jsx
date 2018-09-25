@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 
 import { searchMovies } from '../actions';
 import SearchBox from '../components/SearchBox.jsx';
