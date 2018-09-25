@@ -18,7 +18,7 @@ export default class Search extends Component {
         return (
             <div>
                 <SearchBox search={""} onSearch={this.handleSearch} />
-                <MovieGrid />
+                {/* <MovieGrid /> */}
             </div>
         );
     }
