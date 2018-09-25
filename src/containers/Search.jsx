@@ -17,7 +17,7 @@ export default class Search extends Component {
         console.log(this.props);
         return (
             <div>
-                <SearchBox search={""} onSearch={this.handleSearch} />
+                <SearchBox search={this.props.search} onSearch={this.handleSearch} />
                 {/* <MovieGrid /> */}
             </div>
         );
