@@ -13,6 +13,11 @@ connect(
     { searchMovies }
 )
 export default class Search extends Component {
+       componentWillReceiveProps(nextProps) {
+        if (nextProps.search !== this.props.search) {
+            this.props.searchMovies(nextProps.search);
+        }
+    }
     handleSearch = search =>{
            const { router, location } = this.props;
 
