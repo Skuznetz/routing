@@ -26,7 +26,14 @@ connect(
     { searchMovies }
 )
 export default class Search extends Component {
-       componentWillReceiveProps(nextProps) {
+    componentWillMount() {
+        const { search, searchMovies } = this.props;
+
+        if (search) {
+            searchMovies(search);
+        }
+    }
+    componentWillReceiveProps(nextProps) {
         if (nextProps.search !== this.props.search) {
             this.props.searchMovies(nextProps.search);
         }
@@ -46,7 +53,7 @@ export default class Search extends Component {
                 <SearchBox search={this.props.search} onSearch={this.handleSearch} />
                    <div style={styles.container}>
                         <Loader loading={this.props.loading}>
-                            <MovieGrid movies={this.props.movies} />
+                             <MovieGrid movies={this.props.movies} /> 
                         </Loader>
                     </div>
             </div>
