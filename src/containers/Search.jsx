@@ -8,6 +8,17 @@ import { searchMovies } from '../actions';
 import SearchBox from '../components/SearchBox.jsx';
 import MovieGrid from '../components/MovieGrid.jsx';
 
+const styles = {
+    container: {
+        height: '100%',
+        maxWidth: 800,
+        width: '100%',
+        paddingLeft: 16,
+        paddingRight: 16,
+        margin: '0 auto'
+    }
+};
+
 withRouter
 
 connect(
