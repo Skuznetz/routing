@@ -15,16 +15,16 @@ export const fetchMoviesSuccess = ({ data }) => ({
     type: FETCH_MOVIES_SUCCESS
 });
 
-export const searchMovies = query => dispatch => {
-    dispatch(fetchMoviesRequest(query));
+// export const searchMovies = query => dispatch => {
+//     dispatch(fetchMoviesRequest(query));
 
-    return api.searchMovies(query)
-        .then(data => dispatch(fetchMoviesSuccess(data)));
-}
+//     return api.searchMovies(query)
+//         .then(data => dispatch(fetchMoviesSuccess(data)));
+// }
 
-export const fetchMoreMovies = ({ query, page }) => dispatch => {
-    dispatch(fetchMoviesRequest(query));
+// export const fetchMoreMovies = ({ query, page }) => dispatch => {
+//     dispatch(fetchMoviesRequest(query));
 
-    return api.searchMovies(query)
-        .then(data => dispatch(fetchMoviesSuccess(data)));
-}
+//     return api.searchMovies(query)
+//         .then(data => dispatch(fetchMoviesSuccess(data)));
+// }
