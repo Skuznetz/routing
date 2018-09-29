@@ -10,10 +10,10 @@ export const fetchMoviesRequest = query => ({
     query
 });
 
-export const fetchMoviesSuccess = ({ data }) => ({
-    ...data,
-    type: FETCH_MOVIES_SUCCESS
-});
+// export const fetchMoviesSuccess = ({ data }) => ({
+//     ...data,
+//     type: FETCH_MOVIES_SUCCESS
+// });
 
 // export const searchMovies = query => dispatch => {
 //     dispatch(fetchMoviesRequest(query));
