@@ -32,3 +32,28 @@ export const searchMovies = query => dispatch => {
 //     return api.searchMovies(query)
 //         .then(data => dispatch(fetchMoviesSuccess(data)));
 // }
+
+
+export const fetchMovie = id => dispatch => {
+    dispatch(fetchMovieRequest(id));
+
+    return api.fetchMovie(id)
+        .then(data => dispatch(fetchMovieSuccess(data)));
+}
+
+export const fetchMovieRequest = id => ({
+    type: FETCH_MOVIE_REQUEST,
+    id
+});
+
+export const fetchMovieSuccess = ({ data }) => ({
+    movie: data,
+    type: FETCH_MOVIE_SUCCESS
+});
+
+export const fetchMovie = id => dispatch => {
+    dispatch(fetchMovieRequest(id));
+
+    return api.fetchMovie(id)
+        .then(data => dispatch(fetchMovieSuccess(data)));
+}
