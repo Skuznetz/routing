@@ -19,8 +19,8 @@ module.exports = {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: [
-                    'react-hot',
-                     'babel']
+                    'react-hot-loader',
+                     'babel-loader']
             },
             {
                 test: /\.less$/,
