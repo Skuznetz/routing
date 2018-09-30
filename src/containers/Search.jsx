@@ -19,9 +19,9 @@ const styles = {
     }
 };
 
-withRouter
+@withRouter
 
-connect(
+@connect(
     mapStateToProps,
     { searchMovies }
 )
