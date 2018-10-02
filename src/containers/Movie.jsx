@@ -15,6 +15,11 @@ export default class Movie extends Component {
 
         this.props.fetchMovie(movieId);
     }
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.movieId !== this.props.movieId) {
+            this.props.fetchMovie(nextProps.movieId);
+        }
+    }
     render() {
         const { movie, loading, children } = this.props;
 
