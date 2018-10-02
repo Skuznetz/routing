@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovie } from '../actions';
 
+import MovieInfo from '../components/MovieInfo.jsx';
+import BackdropContainer from '../components/BackdropContainer.jsx';
+import Loader from '../components/Loader.jsx';
+
 @connect(
     mapStateToProps,{fetchMovie}
 )
