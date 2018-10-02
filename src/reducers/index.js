@@ -25,24 +25,24 @@ const movies = ( state = { isFetching: false, items: [] }, action) => {
     }
 };
 
-// const movie = ( state = { isFetching: false, info: {} }, action) => {
-//     switch (action.type) {
-//         case FETCH_MOVIE_REQUEST:
-//             return {
-//                 ...state,
-//                 isFetching: true
-//             };
-//         case FETCH_MOVIE_SUCCESS:
-//             return {
-//                 ...state,
-//                 isFetching: false,
-//                 info: action.movie
-//             };
-//         default:
-//             return state
-//     }
-// };
+const movie = ( state = { isFetching: false, info: {} }, action) => {
+    switch (action.type) {
+        case FETCH_MOVIE_REQUEST:
+            return {
+                ...state,
+                isFetching: true
+            };
+        case FETCH_MOVIE_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                info: action.movie
+            };
+        default:
+            return state
+    }
+};
 
-// export default combineReducers({ movies, movie });
-export default combineReducers({ movies });
+export default combineReducers({ movies, movie });
+
 
