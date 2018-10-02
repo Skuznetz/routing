@@ -30,7 +30,7 @@ export default class Movie extends Component {
     }
 }
 
-function maoStateToProps(state,ownProps){
+function mapStateToProps(state,ownProps){
     return {
         movie: state.movie.info,
         leading: state.movie.isFatching,
