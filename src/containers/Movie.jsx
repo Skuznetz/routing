@@ -10,8 +10,8 @@ import Loader from '../components/Loader.jsx';
     mapStateToProps,{fetchMovie}
 )
 export default class Movie extends Component {
-    componentDidMount() {
-        const { movieId,fetchMovie } = this.props;
+    componentWillMount() {
+        const { movieId } = this.props;
 
         this.props.fetchMovie(movieId);
     }
