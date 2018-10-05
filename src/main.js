@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, Redirect, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
 
 import App from './containers/App.jsx';
 import Search from './containers/Search.jsx';
