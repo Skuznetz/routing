@@ -47,7 +47,6 @@ export default class Search extends Component {
         });
     }
     render() {
-        console.log(this.props);
         return (
             <div>
                 <SearchBox search={this.props.search} onSearch={this.handleSearch} />
