@@ -28,6 +28,7 @@ const routes = (
         </Route>
     </Route>
 )
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
     <Provider store={store}>
