@@ -65,7 +65,7 @@ function mapStateToProps(state, ownProps) {
     return {
         movies: state.movies.items,
         loading: state.movies.isFetching,
-        search: ownProps.location.query.search
+        search: state.routing.locationBeforeTransitions.query.search
     };
 }
 
