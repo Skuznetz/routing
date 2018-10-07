@@ -44,6 +44,6 @@ const movie = ( state = { isFetching: false, info: {} }, action) => {
     }
 };
 
-export default combineReducers({ movies, movie });
+export default combineReducers({ movies, movie,routing: routerReducer});
 
 
