@@ -13,9 +13,10 @@ import MovieRecommendations from './containers/MovieRecommendations.jsx';
 import configureStore from './store';
 
 
+
+
 import 'normalize.css';
 import './assets/main.css';
-
 const history = syncHistoryWithStore(browserHistory, store);
 const store = configureStore({}, history);
 

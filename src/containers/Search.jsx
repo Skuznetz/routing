@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import Loader from '../components/Loader.jsx';
-import { push } from 'react-router-redux'
+// import { push } from 'react-router-redux'
 
 
 import { searchMovies } from '../actions';
@@ -24,7 +24,7 @@ const styles = {
 
 @connect(
     mapStateToProps,
-    { searchMovies,push })
+    { searchMovies })
 export default class Search extends Component {
     componentWillMount() {
         const { search, searchMovies } = this.props;
@@ -38,10 +38,18 @@ export default class Search extends Component {
             this.props.searchMovies(nextProps.search);
         }
     }
-    handleSearch = search =>{
-           const { location } = this.props;
+    // handleSearch = search =>{
+    //        const { location } = this.props;
 
-        this.props.push({
+    //     this.props.push({
+    //         pathname: location.pathname,
+    //         query: { ...location.query, search },
+    //     });
+    // }
+     handleSearch = search => {
+        const { router, location } = this.props;
+
+        router.push({
             pathname: location.pathname,
             query: { ...location.query, search },
         });
