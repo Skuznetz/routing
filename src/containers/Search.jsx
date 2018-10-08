@@ -24,8 +24,7 @@ const styles = {
 
 @connect(
     mapStateToProps,
-    { searchMovies }
-)
+    { searchMovies,push })
 export default class Search extends Component {
     componentWillMount() {
         const { search, searchMovies } = this.props;
