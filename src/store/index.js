@@ -5,11 +5,12 @@ import thunk from 'redux-thunk';
 
 import rootReducer from '../reducers';
 
-const devtools =window.devToolsExtension || (()=> noop => noop);
+const devtools = window.devToolsExtension || (()=> noop => noop);
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default function configureStore(initialState = {}, history) {
     const middlewares = [
+        thunk,
         routerMiddleware(history)
     ];
 
