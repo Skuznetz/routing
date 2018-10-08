@@ -16,6 +16,8 @@ import configureStore from './store';
 import 'normalize.css';
 import './assets/main.css';
 
+const store = configureStore({}, history);
+
 const routes = (
     <Route component={App}>
         <Redirect from="/" to="movies" />
