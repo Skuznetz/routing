@@ -16,6 +16,7 @@ import configureStore from './store';
 import 'normalize.css';
 import './assets/main.css';
 
+const history = syncHistoryWithStore(browserHistory, store);
 const store = configureStore({}, history);
 
 const routes = (
@@ -29,7 +30,7 @@ const routes = (
         </Route>
     </Route>
 )
-const history = syncHistoryWithStore(browserHistory, store);
+
 
 ReactDOM.render(
     <Provider store={store}>
