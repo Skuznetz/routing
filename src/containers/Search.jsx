@@ -39,9 +39,9 @@ export default class Search extends Component {
         }
     }
     handleSearch = search =>{
-           const { router, location } = this.props;
+           const { location } = this.props;
 
-        router.push({
+        this.props.push({
             pathname: location.pathname,
             query: { ...location.query, search },
         });
