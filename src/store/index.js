@@ -7,4 +7,20 @@ import rootReducer from '../reducers';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-export default createStore(rootReducer, composeEnhancers(applyMiddleware(thunk.default)));
+export default function configureStore(initialState = {}, history) {
+    const middlewares = [
+        routerMiddleware(history)
+    ];
+
+    const enhancers = [
+        applyMiddleware(...middlewares),
+        devtools(),
+    ];
+
+    const store = createStore(
+        rootReducer,
+        initialState,
+        compose(...enhancers)
+    );
+        return store;
+}
