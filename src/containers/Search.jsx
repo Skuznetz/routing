@@ -46,14 +46,7 @@ export default class Search extends Component {
             query: { ...location.query, search },
         });
     }
-    //  handleSearch = search => {
-    //     const { router, location } = this.props;
-
-    //     router.push({
-    //         pathname: location.pathname,
-    //         query: { ...location.query, search },
-    //     });
-    // }
+ 
     render() {
         return (
             <div>
