@@ -23,6 +23,18 @@ export function fetchMovie(id) {
         .then(data => camelcaseKeys(data, { deep: true }));
 }
 
+const USERS = [{
+    login: 'max',
+    name: 'Max',
+    avatar: 'https://pbs.twimg.com/profile_images/80699901/max_400x400.jpg',
+    password: 'qwerty12345'
+}, {
+    login: 'kotik9000',
+    name: 'Marysya',
+    avatar: 'https://pbs.twimg.com/profile_images/668830888499789824/Yf2U7LjB.jpg',
+    password: '12345678'
+}];
+
 export default {
     searchMovies,
     fetchMovie
