@@ -38,6 +38,24 @@ const USERS = [{
 
 const SECRET = 'react2';
 
+export function auth(login, password) {
+    return new Promise((resolve, reject) => {
+        const user = USERS.find(user => user.login === login);
+
+        if (!user) {
+            return reject('User does not exist');
+        }
+
+        if (user.password !== password) {
+            return reject('Pasword is incorrect');
+        }
+
+        return resolve({
+            user,
+            token: jwt.encode(user, SECRET)
+        });
+    });
+}
 export default {
     searchMovies,
     fetchMovie
