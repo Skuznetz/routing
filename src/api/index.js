@@ -1,5 +1,6 @@
 import axios from 'axios';
 import camelcaseKeys from 'camelcase-keys';
+import jwt from 'jwt-simple';
 
 const API_PREFIX = 'https://api.themoviedb.org/3';
 const API_KEY = '8c9f0b25d628dc3a96bcc112d2c82e63';
