@@ -58,5 +58,6 @@ export function auth(login, password) {
 }
 export default {
     searchMovies,
-    fetchMovie
+    fetchMovie,
+    auth
 };
