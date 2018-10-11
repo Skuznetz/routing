@@ -36,6 +36,8 @@ const USERS = [{
     password: '12345678'
 }];
 
+const SECRET = 'react2';
+
 export default {
     searchMovies,
     fetchMovie
