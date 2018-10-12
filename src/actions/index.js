@@ -46,3 +46,22 @@ export const fetchMovie = id => dispatch => {
 export const AUTH_REQUEST = 'AUTH_REQUEST';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAILURE = 'AUTH_FAILURE';
+
+export const auth = (login, password) => dispatch => {
+    dispatch({
+        type: AUTH_REQUEST,
+    });
+
+    return api.auth(login, password)
+        .then(
+            data => (
+                dispatch(authSuccess(data.token, data.user))
+            ),
+            error => (
+                dispatch({
+                    error,
+                    type: AUTH_FAILURE
+                })
+            ),
+        );
+};
