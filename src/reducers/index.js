@@ -44,6 +44,31 @@ const movie = ( state = { isFetching: false, info: {} }, action) => {
     }
 };
 
+const session = (state = { isLoggingIn: false, isLoggedIn: false, error: null }, action) => {
+    switch (action.type) {
+        case AUTH_REQUEST:
+            return {
+                ...state,
+                isLoggingIn: true,
+            };
+        case AUTH_SUCCESS:
+            return {
+                ...state,
+                isLoggingIn: false,
+                isLoggedIn: true,
+            };
+        case AUTH_FAILURE:
+            return {
+                ...state,
+                isLoggingIn: false,
+                isLoggedIn: false,
+                error: action.error,
+            };
+        default:
+            return state
+    }
+}
+
 export default combineReducers({ movies, movie,routing: routerReducer});
 
 
