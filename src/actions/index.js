@@ -47,6 +47,16 @@ export const AUTH_REQUEST = 'AUTH_REQUEST';
 export const AUTH_SUCCESS = 'AUTH_SUCCESS';
 export const AUTH_FAILURE = 'AUTH_FAILURE';
 
+export const authSuccess = (token, user) => {
+    saveSession(token);
+
+    return {
+        user: user,
+        token: token,
+        type: AUTH_SUCCESS
+    };
+}
+
 export const auth = (login, password) => dispatch => {
     dispatch({
         type: AUTH_REQUEST,
