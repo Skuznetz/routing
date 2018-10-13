@@ -5,7 +5,10 @@ import {
     FETCH_MOVIES_REQUEST,
     FETCH_MOVIES_SUCCESS,
     FETCH_MOVIE_REQUEST,
-    FETCH_MOVIE_SUCCESS
+    FETCH_MOVIE_SUCCESS,
+    AUTH_REQUEST,
+    AUTH_SUCCESS,
+    AUTH_FAILURE
 } from '../actions';
 
 const movies = ( state = { isFetching: false, items: [] }, action) => {
