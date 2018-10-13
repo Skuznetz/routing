@@ -30,3 +30,68 @@ const styles = {
         fontWeight: 'bold'
     }
 };
+
+export default class LoginPage extends Component {
+    state = {
+        login: '',
+        password: ''
+    }
+
+
+
+    handleLoginChange = (e) => {
+        this.setState({
+            login: e.target.value
+        });
+    }
+
+    handlePasswordChange = (e) => {
+        this.setState({
+            password: e.target.value
+        });
+    }
+
+    handleLogIn = () => {
+        this.props.auth(this.state.login, this.state.password);
+    }
+
+    render() {
+        const { error } = this.props;
+
+        return (
+            <div style={styles.container}>
+                <Card style={styles.card} containerStyle={styles.form}>
+                    <h2>Log in</h2>
+
+                    <TextField
+                        fullWidth
+                        floatingLabelText="Login"
+                        value={this.state.login}
+                        onChange={this.handleLoginChange}
+                    />
+
+                    <TextField
+                        fullWidth
+                        type="password"
+                        floatingLabelText="Password"
+                        value={this.state.password}
+                        onChange={this.handlePasswordChange}
+                    />
+
+                    <br />
+
+                    {
+                        error &&
+                        <p style={styles.error}>{error}</p>
+                    }
+
+                    <RaisedButton
+                        primary
+                        label="Log in"
+                        onClick={this.handleLogIn}
+                    />
+                </Card>
+            </div>
+        );
+    }
+}
