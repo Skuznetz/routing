@@ -11,6 +11,8 @@ import About from './containers/About.jsx';
 import MovieSimilar from './containers/MovieSimilar.jsx';
 import MovieRecommendations from './containers/MovieRecommendations.jsx';
 import configureStore from './store';
+import LoginPage from './containers/LoginPage.jsx';
+
 
 
 
