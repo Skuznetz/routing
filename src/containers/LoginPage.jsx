@@ -30,7 +30,13 @@ const styles = {
         fontWeight: 'bold'
     }
 };
-
+const mapStateToProps = state => {
+    return {
+        isLoggingIn: state.session.isLoggingIn,
+        isLoggedIn: state.session.isLoggedIn,
+        error: state.session.error
+    };
+}
 export default class LoginPage extends Component {
     state = {
         login: '',
