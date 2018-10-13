@@ -8,3 +8,25 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Card from 'material-ui/Card';
 
 import { auth } from '../actions';
+
+const styles = {
+    container: {
+        height: '100%',
+        width: '100%',
+        padding: 16,
+    },
+    card: {
+        padding: 16,
+        maxWidth: 500,
+        margin: '0 auto',
+    },
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center'
+    },
+    error: {
+        color: 'red',
+        fontWeight: 'bold'
+    }
+};
