@@ -37,6 +37,8 @@ const mapStateToProps = state => {
         error: state.session.error
     };
 }
+@connect(mapStateToProps, { auth })
+
 export default class LoginPage extends Component {
     state = {
         login: '',
