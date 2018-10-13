@@ -24,6 +24,7 @@ const store = configureStore({}, history);
 
 const routes = (
     <Route component={App}>
+        <Route path="login" component={LoginPage} />
         <Redirect from="/" to="movies" />
         <Route path="movies" component={Search} />
         <Route path="about" component={About} />
