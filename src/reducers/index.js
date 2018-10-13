@@ -69,6 +69,6 @@ const session = (state = { isLoggingIn: false, isLoggedIn: false, error: null },
     }
 }
 
-export default combineReducers({ movies, movie,routing: routerReducer});
+export default combineReducers({ movies, movie,routing: routerReducer,session});
 
 
