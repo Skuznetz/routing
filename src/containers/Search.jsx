@@ -20,7 +20,7 @@ const styles = {
     }
 };
 
-@withRouter
+// @withRouter
 
 @connect(
     mapStateToProps,
