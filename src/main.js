@@ -27,14 +27,16 @@ const store = configureStore({}, history);
 const routes = (
     <Route component={App}>
         <Route path="login" component={LoginPage} />
-        <Route path="movies" component={Search} />
-        <Route path="about" component={About} />
-        <Route path="movies/:id" component={Movie}>
-            <Route path="recommendations" component={MovieRecommendations} />
-            <Route path="similar" component={MovieSimilar} />
+        <Route path="about" component={AboutPage} />
+
+        <Route component={requireAuth(LoggedInLayout)}>
+            <Route path="movies" component={SearchPage} />
+            <Route path="movies/:id" component={MoviePage}>
+                <Route path="recommendations" component={MovieRecommendationsPage} />
+                <Route path="similar" component={MovieSimilarPage} />
+            </Route>
         </Route>
-    </Route>
-)
+    </Route
 
 
 ReactDOM.render(
