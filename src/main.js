@@ -36,7 +36,7 @@ const routes = (
                 <Route path="similar" component={MovieSimilarPage} />
             </Route>
         </Route>
-    </Route
+    </Route>)
 
 
 ReactDOM.render(
