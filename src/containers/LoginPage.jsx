@@ -46,7 +46,12 @@ export default class LoginPage extends Component {
         login: '',
         password: ''
     }
-
+    
+    componentWillMount() {
+        if (this.props.isLoggedIn) {
+            this.redirectAuthentificatedUser(this.props);
+        }
+    }
     componentWillReceiveProps(nextProps) {
         if (nextProps.isLoggedIn) {
             this.redirectAuthentificatedUser(nextProps);
