@@ -34,7 +34,9 @@ const mapStateToProps = state => {
     return {
         isLoggingIn: state.session.isLoggingIn,
         isLoggedIn: state.session.isLoggedIn,
-        error: state.session.error
+        error: state.session.error,
+        nextLocation: state.routing.locationBeforeTransitions.state.nextLocation
+
     };
 }
 @connect(mapStateToProps, { auth })
