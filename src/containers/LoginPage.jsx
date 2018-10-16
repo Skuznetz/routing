@@ -47,7 +47,13 @@ export default class LoginPage extends Component {
         password: ''
     }
 
-
+    redirectAuthentificatedUser = props => {
+        if (props.nextLocation) {
+            this.props.replace(props.nextLocation);
+        } else {
+            this.props.replace('/movies');
+        }
+    }
 
     handleLoginChange = (e) => {
         this.setState({
