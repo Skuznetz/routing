@@ -1,4 +1,5 @@
 import api from '../api';
+import { saveSession } from '../utils/session';
 
 export const FETCH_MOVIES_REQUEST = 'FETCH_MOVIES_REQUEST';
 export const FETCH_MOVIES_SUCCESS = 'FETCH_MOVIES_SUCCESS';
