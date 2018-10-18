@@ -26,10 +26,10 @@ module.exports = {
                 test: /\.less$/,
                 exclude: /node_modules/,
                 use: [
-                    'style',
-                    'css?modules&importLoaders=1&localIdentName=__[name]__[local]___[hash:base64:5]',
+                    'style-loader',
+                    'css-loader?modules&importLoaders=1&localIdentName=__[name]__[local]___[hash:base64:5]',
                     {
-                        loader: 'postcss',
+                        loader: 'postcss-loader',
                         options: {
                             plugins() {
                                 return [
@@ -38,12 +38,12 @@ module.exports = {
                             }
                         }
                     },
-                    'less'
+                    'less-loader'
                 ]
             },
             {
                 test: /\.css$/,
-                use: ['style', 'css']
+                use: ['style-loader', 'css-loader']
             },
                 {
                 test: /\.json$/,

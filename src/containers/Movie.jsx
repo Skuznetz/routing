@@ -11,9 +11,9 @@ import Loader from '../components/Loader.jsx';
 )
 export default class Movie extends Component {
     componentWillMount() {
-        const { movieId } = this.props;
+        const { movieId,fetchMovie } = this.props;
 
-        this.props.fetchMovie(movieId);
+        fetchMovie(movieId);
     }
     componentWillReceiveProps(nextProps) {
         if (nextProps.movieId !== this.props.movieId) {

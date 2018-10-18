@@ -12,6 +12,7 @@ export function searchMovies(query) {
     };
 
     return axios.get(`${API_PREFIX}/search/movie`, { params })
+        .then(response => response.data)
         .then(data => camelcaseKeys(data, { deep: true }));
 }
 
@@ -21,6 +22,7 @@ export function fetchMovie(id) {
     };
 
     return axios.get(`${API_PREFIX}/movie/${id}`, { params })
+        .then(response => response.data)
         .then(data => camelcaseKeys(data, { deep: true }));
 }
 

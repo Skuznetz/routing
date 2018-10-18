@@ -3,6 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, Redirect, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
+import { extractSession } from './utils/session';
 
 import App from './containers/App.jsx';
 import Search from './containers/Search.jsx';
@@ -13,6 +14,8 @@ import MovieRecommendations from './containers/MovieRecommendations.jsx';
 import configureStore from './store';
 import LoginPage from './containers/LoginPage.jsx';
 import LoggedInLayout from './components/LoggedInLayout.jsx';
+import { restoreAuth } from './actions';
+import requireAuth from './hoc/requireAuth.jsx';
 
 
 
@@ -21,23 +24,23 @@ import LoggedInLayout from './components/LoggedInLayout.jsx';
 
 import 'normalize.css';
 import './assets/main.css';
-const history = syncHistoryWithStore(browserHistory, store);
-const store = configureStore({}, history);
+
 
 const routes = (
     <Route component={App}>
         <Route path="login" component={LoginPage} />
-        <Route path="about" component={AboutPage} />
+        <Route path="about" component={About} />
 
         <Route component={requireAuth(LoggedInLayout)}>
-            <Route path="movies" component={SearchPage} />
-            <Route path="movies/:id" component={MoviePage}>
-                <Route path="recommendations" component={MovieRecommendationsPage} />
-                <Route path="similar" component={MovieSimilarPage} />
+            <Route path="movies" component={Search} />
+            <Route path="movies/:id" component={Movie}>
+                <Route path="recommendations" component={MovieRecommendations} />
+                <Route path="similar" component={MovieSimilar} />
             </Route>
         </Route>
-    </Route>)
-
+    </Route>);
+const history = syncHistoryWithStore(browserHistory, store);
+const store = configureStore({}, history);
 
 ReactDOM.render(
     <Provider store={store}>

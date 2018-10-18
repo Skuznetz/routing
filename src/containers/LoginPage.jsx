@@ -39,7 +39,7 @@ const mapStateToProps = state => {
 
     };
 }
-@connect(mapStateToProps, { auth })
+@connect(mapStateToProps, { auth,replace })
 
 export default class LoginPage extends Component {
     state = {
