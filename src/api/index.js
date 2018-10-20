@@ -58,6 +58,25 @@ export function auth(login, password) {
         });
     });
 }
+
+export function checkAuth(token) {
+    return new Promise((resolve, reject) => {
+        if (!token) {
+            return reject('User is not authentificated');
+        }
+
+        const decodedUser = jwt.decode(token, SECRET);
+
+        const loggedInUser = USERS.find(user => user.login === decodedUser.login);
+
+        if (!loggedInUser) {
+            return reject('User does not exist');
+        }
+
+        return resolve(loggedInUser);
+    });
+}
+
 export default {
     searchMovies,
     fetchMovie,
