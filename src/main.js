@@ -43,11 +43,12 @@ const routes = (
 const store = configureStore({}, history);
 const history = syncHistoryWithStore(browserHistory, store);
 
-ReactDOM.render(
+const renderApp = () => {
+    ReactDOM.render(
     <Provider store={store}>
          <Router history={browserHistory}>
             {routes}
         </Router> 
     </Provider>,
     document.getElementById('root')
-);
+);}
