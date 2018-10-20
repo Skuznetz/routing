@@ -15,7 +15,7 @@ export default function configureStore(initialState = {}, history) {
 
     const enhancers = [
         applyMiddleware(...middlewares),
-        devtools(),
+        devtools()
     ];
 
     const store = createStore(
