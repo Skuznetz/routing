@@ -80,5 +80,6 @@ export function checkAuth(token) {
 export default {
     searchMovies,
     fetchMovie,
-    auth
+    auth,
+    checkAuth
 };
