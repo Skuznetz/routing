@@ -26,7 +26,7 @@ const styles = {
     mapStateToProps,
     { searchMovies,push })
 export default class Search extends Component {
-    componentWillMount() {
+    componentDidMount() {
         const { search, searchMovies } = this.props;
 
         if (search) {
