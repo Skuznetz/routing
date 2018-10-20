@@ -11,11 +11,12 @@ import Movie from './containers/Movie.jsx';
 import About from './containers/About.jsx';
 import MovieSimilar from './containers/MovieSimilar.jsx';
 import MovieRecommendations from './containers/MovieRecommendations.jsx';
-import configureStore from './store';
+
 import LoginPage from './containers/LoginPage.jsx';
 import LoggedInLayout from './components/LoggedInLayout.jsx';
-import { restoreAuth } from './actions';
 import requireAuth from './hoc/requireAuth.jsx';
+import configureStore from './store';
+import { restoreAuth } from './actions';
 
 
 
