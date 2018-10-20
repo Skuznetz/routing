@@ -38,9 +38,10 @@ const routes = (
                 <Route path="similar" component={MovieSimilar} />
             </Route>
         </Route>
-    </Route>);
-const history = syncHistoryWithStore(browserHistory, store);
+</Route>);
+
 const store = configureStore({}, history);
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render(
     <Provider store={store}>
