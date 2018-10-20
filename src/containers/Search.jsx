@@ -43,7 +43,7 @@ export default class Search extends Component {
 
         this.props.push({
             pathname: location.pathname,
-            query: { ...location.query, search },
+            query: { ...location.query, search }
         });
     }
  
