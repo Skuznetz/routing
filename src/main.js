@@ -52,3 +52,15 @@ const renderApp = () => {
     </Provider>,
     document.getElementById('root')
 );}
+
+const startApp = () => {
+    const session = extractSession();
+
+    if (session) {
+        store.dispatch(restoreAuth(session)).then(() => renderApp());
+    } else {
+        renderApp();
+    }
+}
+
+startApp();
