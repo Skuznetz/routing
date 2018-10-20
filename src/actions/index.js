@@ -58,6 +58,15 @@ export const authSuccess = (token, user) => {
     };
 }
 
+export const restoreAuth = token => dispatch => {
+    return api.checkAuth(token)
+        .then(
+            data => (
+                dispatch(authSuccess(token, data))
+            )
+        );
+}
+
 export const auth = (login, password) => dispatch => {
     dispatch({
         type: AUTH_REQUEST,
