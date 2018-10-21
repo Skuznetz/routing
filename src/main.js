@@ -41,13 +41,13 @@ const routes = (
         </Route>
 </Route>);
 
-const store = configureStore({}, history);
+const store = configureStore({}, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 
 const renderApp = () => {
     ReactDOM.render(
     <Provider store={store}>
-         <Router history={browserHistory}>
+         <Router history={history}>
             {routes}
         </Router> 
     </Provider>,
