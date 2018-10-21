@@ -8,7 +8,7 @@ const API_KEY = '8c9f0b25d628dc3a96bcc112d2c82e63';
 export function searchMovies(query) {
     const params = {
         query,
-        api_key: API_KEY,
+        api_key: API_KEY
     };
 
     return axios.get(`${API_PREFIX}/search/movie`, { params })
