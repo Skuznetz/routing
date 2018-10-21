@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import Loader from '../components/Loader.jsx';
-import { push } from 'react-router-redux'
+import { push } from 'react-router-redux';
 
 
 import { searchMovies } from '../actions';
 import SearchBox from '../components/SearchBox.jsx';
 import MovieGrid from '../components/MovieGrid.jsx';
+import Loader from '../components/Loader.jsx';
 
 const styles = {
     container: {
@@ -25,7 +25,7 @@ const styles = {
 @connect(
     mapStateToProps,
     { searchMovies,push })
-export default class Search extends Component {
+ export default class Search extends Component {
     componentDidMount() {
         const { search, searchMovies } = this.props;
 
