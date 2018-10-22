@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { replace } from 'react-router-redux';
-
+import { isLoggedIn } from '../selector';
 // const mapStateToProps = state => ({
 //     isLoggedIn: state.session.isLoggedIn,
 //     pathname: state.routing.locationBeforeTransitions.pathname,
