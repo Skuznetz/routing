@@ -8,6 +8,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 import Card from 'material-ui/Card';
 
 import { auth } from '../actions';
+import { isLoggedIn, isLoggingIn, getAuthError, getNextLocation } from '../selectors';
 
 const styles = {
     container: {
