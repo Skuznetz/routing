@@ -46,7 +46,7 @@ export default function requireAuth(Component) {
 }
 
 const mapStateToProps = state => ({
-    isLoggedIn: state.session.isLoggedIn,
+        isLoggedIn: isLoggedIn(state),
     pathname: state.routing.locationBeforeTransitions.pathname,
     query: state.routing.locationBeforeTransitions.query,
 });
