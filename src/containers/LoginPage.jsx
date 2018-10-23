@@ -124,9 +124,9 @@ export default class LoginPage extends Component {
 }
 const mapStateToProps = state => {
     return {
-        isLoggingIn: state.session.isLoggingIn,
-        isLoggedIn: state.session.isLoggedIn,
-        error: state.session.error,
-        nextLocation: state.routing.locationBeforeTransitions.state.nextLocation
+        isLoggingIn: isLoggingIn(state),
+        isLoggedIn: isLoggedIn(state),
+        error: getAuthError(state),
+        nextLocation: getNextLocation(state)
     };
 }
