@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import { push } from 'react-router-redux';
 
-
+import { isMoviesFetching, getSearchMoviesVoteAverage, getSearchMovies, getSearchMovieCount, getMoviesSearchQuery } from '../selectors';
 import { searchMovies } from '../actions';
 import SearchBox from '../components/SearchBox.jsx';
 import MovieGrid from '../components/MovieGrid.jsx';
