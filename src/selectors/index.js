@@ -1,3 +1,5 @@
+import { createSelector } from 'reselect';
+
 export const isLoggedIn = state => state.isLoggedIn;
 export const isLoggingIn = state => state.session.isLoggingIn;
 export const getAuthError = state => state.session.error;
