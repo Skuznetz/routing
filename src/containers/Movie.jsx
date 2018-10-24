@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovie } from '../actions';
+import { isMovieFetching, getMovieInfo } from '../selectors';
 
 import MovieInfo from '../components/MovieInfo.jsx';
 import BackdropContainer from '../components/BackdropContainer.jsx';
