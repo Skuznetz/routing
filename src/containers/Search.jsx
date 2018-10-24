@@ -64,9 +64,11 @@ const styles = {
 
 function mapStateToProps(state, ownProps) {
     return {
-        movies: state.movies.items,
-        loading: state.movies.isFetching,
-        search: state.routing.locationBeforeTransitions.query.search
+        movies: getSearchMovies(state),
+        movieCount: getSearchMovieCount(state),
+        voteAverage: getSearchMoviesVoteAverage(state),
+        loading: isMoviesFetching(state),
+        search: getMoviesSearchQuery(state)
     };
 }
 
