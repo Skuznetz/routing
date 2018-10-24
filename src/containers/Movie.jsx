@@ -38,8 +38,8 @@ export default class Movie extends Component {
 
 function mapStateToProps(state,ownProps){
     return {
-        movie: state.movie.info,
-        leading: state.movie.isFatching,
+        movie: getMovieInfo(state),
+        loading: isMovieFetching(state),
         movieId: ownProps.params.id
     };
 }
