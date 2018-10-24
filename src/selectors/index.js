@@ -26,4 +26,14 @@ export const getMovieInfo = state => state.movie.info;
 export const isMoviesFetching = state => state.movies.isFetching;
 export const getSearchMovies = state => state.movies.items;
 
+export const getSearchMovieCount = createSelector(
+    getSearchMovies,
+    movies => movies.length
+);
+
+export const getSearchMoviesVoteAverage = createSelector(
+    getSearchMovies,
+    getSearchMovieCount,
+    (movies, count) => movies.reduce((sum, movie) => sum + movie.voteAverage, 0) / count
+);
 
