@@ -6,6 +6,20 @@ export const getAuthError = state => state.session.error;
 
 export const getLocation = state => state.routing.locationBeforeTransitions;
 
+export const getNextLocation = createSelector(
+    getLocation,
+    location => location.state.nextLocation
+);
+
+export const getQuery = createSelector(
+    getLocation,
+    location => location.query
+);
+
+export const getMoviesSearchQuery = createSelector(
+    getQuery,
+    query => query.search
+);
 export const isMovieFetching = state => state.movie.isFetching;
 export const getMovieInfo = state => state.movie.info;
 
