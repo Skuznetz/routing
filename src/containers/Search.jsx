@@ -53,7 +53,9 @@ const styles = {
                 <SearchBox search={this.props.search} onSearch={this.handleSearch} />
                    <div style={styles.container}>
                         <Loader loading={this.props.loading}>
-                             <MovieGrid movies={this.props.movies} /> 
+                            <p>Found {this.props.movieCount} movies</p>
+                            <p>Av. vote {Math.round(this.props.voteAverage * 100) / 100}</p>
+                            <MovieGrid movies={this.props.movies} /> 
                         </Loader>
                     </div>
             </div>
