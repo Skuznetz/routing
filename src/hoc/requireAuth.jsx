@@ -2,11 +2,12 @@ import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { replace } from 'react-router-redux';
 import { isLoggedIn } from '../selectors';
-// const mapStateToProps = state => ({
-//     isLoggedIn: state.session.isLoggedIn,
-//     pathname: state.routing.locationBeforeTransitions.pathname,
-//     query: state.routing.locationBeforeTransitions.query,
-// });
+
+const mapStateToProps = state => ({
+    isLoggedIn: isLoggedIn(state),
+    pathname: state.routing.locationBeforeTransitions.pathname,
+    query: state.routing.locationBeforeTransitions.query,
+});
 
 export default function requireAuth(Component) {
     @connect(mapStateToProps, { replace })
@@ -45,8 +46,3 @@ export default function requireAuth(Component) {
     return AuthentificatedComponent;
 }
 
-const mapStateToProps = state => ({
-    isLoggedIn: isLoggedIn(state),
-    pathname: state.routing.locationBeforeTransitions.pathname,
-    query: state.routing.locationBeforeTransitions.query,
-});
