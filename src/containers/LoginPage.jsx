@@ -31,14 +31,14 @@ const styles = {
         fontWeight: 'bold'
     }
 };
-// const mapStateToProps = state => {
-//     return {
-//         isLoggingIn: state.session.isLoggingIn,
-//         isLoggedIn: state.session.isLoggedIn,
-//         error: state.session.error,
-//         nextLocation: state.routing.locationBeforeTransitions.state.nextLocation
-//     };
-// }
+const mapStateToProps = state => {
+    return {
+        isLoggingIn: isLoggingIn(state),
+        isLoggedIn: isLoggedIn(state),
+        error: getAuthError(state),
+        nextLocation: getNextLocation(state)
+    };
+}
 @connect(mapStateToProps, { auth,replace })
 
 export default class LoginPage extends Component {
@@ -121,12 +121,4 @@ export default class LoginPage extends Component {
             </div>
         );
     }
-}
-const mapStateToProps = state => {
-    return {
-        isLoggingIn: isLoggingIn(state),
-        isLoggedIn: isLoggedIn(state),
-        error: getAuthError(state),
-        nextLocation: getNextLocation(state)
-    };
 }
